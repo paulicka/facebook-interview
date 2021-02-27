@@ -1,5 +1,10 @@
 
 def mergesort(a, lo = None, hi = None):
+  """  Returns sorted copy of array
+
+  >>> mergesort([ 7, 3, 4, -1, 8, 0, 5, 9, 2])
+  [-1, 0, 2, 3, 4, 5, 7, 8, 9]
+  """
   assert(isinstance(a, list))
   lo = 0 if lo is None else lo
   hi = len(a) if hi is None else hi
@@ -36,3 +41,8 @@ def merge(a, b):
     k += 1
   
   return r
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+    

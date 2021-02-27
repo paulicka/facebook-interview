@@ -1,4 +1,30 @@
+"""
+This is the EmmanuelSonja module, an homage to what started it all.
 
+>>> tree = sample()
+>>> tree.v
+4
+
+This module supplies classes:
+
+(object)
+- Node
+- Visitor
+-- DFSVisitor
+-- BFSVisitor
+- Processor
+-- Printer
+-- Averager
+--- Denser
+BFSPrinter(BFSVisitor, Printer)
+DFSPrinter(DFSVisitor, Printer)
+BFSAverager(BFSVisitor, Averager)
+DFSAverager(DFSVisitor, Averager)
+BFSDenser(BFSVisitor, Denser)
+DFSDenser(DFSVisitor, Denser)
+
+
+"""
 
 class Node(object):
     def __init__(self, v, l = None, r = None):
@@ -101,7 +127,15 @@ class DFSAverager(DFSVisitor, Averager):
 class BFSDenser(BFSVisitor, Denser):
   pass
 
+class DFSDenser(DFSVisitor, Denser):
+  pass
+
 def sample():
+  """Returns sample tree of Nodes from Emmanuel/Sonja interview
+
+  >>> print(sample())
+  4(7(10(None,None),2(None,6(2(None,None),None))),9(None,6(None,None)))
+  """
   r = Node(4, 
           Node(7,
               Node(10), 
@@ -115,27 +149,10 @@ def sample():
           )
   return r
 
-def print_output():
-  r = sample()
-  print("Sample: ", r)
 
-  print("DFS")
-  DFSPrinter(r).traverse()
 
-  print("BFS")
-  BFSPrinter(r).traverse()
-
-  print("BFSAverager")
-  print(BFSAverager(r).traverse())
-
-  print("BFSAverager solution")
-  print([(k, sum(v) // len(v)) for (k, v) in BFSAverager(r).traverse().items()])
-
-  print("BFSDenser")
-  print(BFSDenser(r).traverse())
-
-  print("BFSDenser solution")
-  print([(k, (s // c)) for (k, (c, s)) in BFSDenser(r).traverse().items()])
-
-  print("DFSAverager")
-  print(DFSAverager(r).traverse())
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+    doctest.testfile("emmanuel_sonja_doctest.md")
+    

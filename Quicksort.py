@@ -1,6 +1,14 @@
 
 
 def quicksort(a, lo=None, hi=None):
+  """  Does in-place quicksort of array
+
+  >>> a = [ 7, 3, 4, -1, 8, 0, 5, 9, 2]
+  >>> quicksort(a)
+  >>> a
+  [-1, 0, 2, 3, 4, 5, 7, 8, 9]
+  """
+  
   lo = 0 if lo is None else lo
   hi = len(a) - 1 if hi is None else hi
 
@@ -27,4 +35,8 @@ def swap(a, i, j):
     tmp = a[i]
     a[i] = a[j]
     a[j] = tmp
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
 

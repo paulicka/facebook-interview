@@ -5,23 +5,10 @@ from Mergesort import mergesort
 from Quicksort import quicksort
 from EmmanuelSonja import *
 
-def make_array():
-  return [ 7, 3, 4, -1, 8, 0, 5, 9, 2]
-
-
 def main():
-  print("mergesort")
-  a = make_array()
-  print(a)
-  b = mergesort(a)
-  print(b)
+  # TODO Make this run all the doctests verbose in other modules
+  assert(False)
   
-  print("quicksort")
-  print(a)
-  quicksort(a)
-  print(a)
-
-  print_output()
 
 if __name__ == "__main__":
   main()
