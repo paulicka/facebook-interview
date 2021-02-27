@@ -23,9 +23,9 @@ The following were extracted from the video, as to what one might want to review
 * stack
 * queue
 * tree
-* heaps
-* tries
-* graphs
+* heap
+* trie
+* graph
 
 ## Algorithms
 
